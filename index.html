@@ -9,27 +9,27 @@
   @import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
-–bg: #0a0a0f;
-–surface: #12121a;
-–card: #1a1a28;
-–card-hover: #22223a;
-–accent1: #ff3d7f;
-–accent2: #b44fff;
-–accent3: #ff8c42;
-–gold: #e8c97e;
-–text: #e8e8f0;
-–muted: #7070a0;
-–glow1: rgba(255, 61, 127, 0.4);
-–glow2: rgba(180, 79, 255, 0.4);
+--bg: #0a0a0f;
+--surface: #12121a;
+--card: #1a1a28;
+--card-hover: #22223a;
+--accent1: #ff3d7f;
+--accent2: #b44fff;
+--accent3: #ff8c42;
+--gold: #e8c97e;
+--text: #e8e8f0;
+--muted: #7070a0;
+--glow1: rgba(255, 61, 127, 0.4);
+--glow2: rgba(180, 79, 255, 0.4);
 }
 
 - { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
 html, body {
 width: 100%; min-height: 100vh;
-background: var(–bg);
+background: var(--bg);
 font-family: ‘Zen Kaku Gothic New’, sans-serif;
-color: var(–text);
+color: var(--text);
 overflow-x: hidden;
 }
 
@@ -83,7 +83,7 @@ font-family: ‘Playfair Display’, serif;
 font-size: clamp(2.2rem, 6vw, 3.5rem);
 font-weight: 700;
 letter-spacing: 0.15em;
-background: linear-gradient(135deg, var(–accent1) 0%, var(–accent2) 50%, var(–gold) 100%);
+background: linear-gradient(135deg, var(--accent1) 0%, var(--accent2) 50%, var(--gold) 100%);
 -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 background-clip: text;
 filter: drop-shadow(0 0 30px rgba(255,61,127,0.5));
@@ -95,31 +95,31 @@ margin-top: 10px;
 font-size: 0.78rem;
 letter-spacing: 0.3em;
 text-transform: uppercase;
-color: var(–muted);
+color: var(--muted);
 }
 
 .divider {
 width: 120px; height: 1px;
-background: linear-gradient(90deg, transparent, var(–accent1), var(–accent2), transparent);
+background: linear-gradient(90deg, transparent, var(--accent1), var(--accent2), transparent);
 margin: 16px auto 0;
 }
 
 /* — Clock — */
 .clock {
 font-size: 0.85rem;
-color: var(–muted);
+color: var(--muted);
 margin-top: 14px;
 letter-spacing: 0.1em;
 font-weight: 300;
 }
-.clock span { color: var(–gold); }
+.clock span { color: var(--gold); }
 
 /* — Section label — */
 .section-label {
 font-size: 0.65rem;
 letter-spacing: 0.4em;
 text-transform: uppercase;
-color: var(–muted);
+color: var(--muted);
 margin-bottom: 18px;
 padding-left: 4px;
 display: flex; align-items: center; gap: 10px;
@@ -127,7 +127,7 @@ display: flex; align-items: center; gap: 10px;
 .section-label::after {
 content: ‘’;
 flex: 1; height: 1px;
-background: linear-gradient(90deg, var(–muted), transparent);
+background: linear-gradient(90deg, var(--muted), transparent);
 opacity: 0.3;
 }
 
@@ -153,11 +153,11 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 padding: 22px 12px 18px;
-background: var(–card);
+background: var(--card);
 border: 1px solid rgba(255,255,255,0.06);
 border-radius: 16px;
 text-decoration: none;
-color: var(–text);
+color: var(--text);
 position: relative;
 overflow: hidden;
 cursor: pointer;
@@ -182,7 +182,7 @@ to   { opacity: 1; transform: translateY(0); }
 .card::before {
 content: ‘’;
 position: absolute; top: 0; left: 0; right: 0; height: 2px;
-background: linear-gradient(90deg, transparent, var(–card-accent, var(–accent1)), transparent);
+background: linear-gradient(90deg, transparent, var(--card-accent, var(--accent1)), transparent);
 opacity: 0;
 transition: opacity 0.3s;
 }
@@ -193,7 +193,7 @@ content: ‘’;
 position: absolute;
 width: 80px; height: 80px;
 border-radius: 50%;
-background: var(–card-accent, var(–accent1));
+background: var(--card-accent, var(--accent1));
 opacity: 0;
 filter: blur(40px);
 transition: opacity 0.4s;
@@ -201,7 +201,7 @@ pointer-events: none;
 }
 
 .card:hover, .card:active {
-background: var(–card-hover);
+background: var(--card-hover);
 transform: translateY(-4px) scale(1.02);
 box-shadow: 0 16px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.08);
 }
@@ -226,7 +226,7 @@ line-height: 1.2;
 
 .card-desc {
 font-size: 0.65rem;
-color: var(–muted);
+color: var(--muted);
 margin-top: 5px;
 text-align: center;
 letter-spacing: 0.02em;
@@ -241,22 +241,22 @@ letter-spacing: 0.08em;
 text-transform: uppercase;
 padding: 2px 6px;
 border-radius: 4px;
-background: var(–card-accent, var(–accent1));
+background: var(--card-accent, var(--accent1));
 color: #fff;
 opacity: 0.9;
 }
 
 /* Color variants */
-.c-pink  { –card-accent: var(–accent1); }
-.c-purple { –card-accent: var(–accent2); }
-.c-orange { –card-accent: var(–accent3); }
-.c-gold  { –card-accent: var(–gold); }
+.c-pink  { --card-accent: var(--accent1); }
+.c-purple { --card-accent: var(--accent2); }
+.c-orange { --card-accent: var(--accent3); }
+.c-gold  { --card-accent: var(--gold); }
 
 /* — Footer — */
 footer {
 text-align: center;
 font-size: 0.65rem;
-color: var(–muted);
+color: var(--muted);
 letter-spacing: 0.15em;
 opacity: 0.5;
 margin-top: 20px;
@@ -296,7 +296,7 @@ vertical-align: middle;
 
   <div class="grid">
 
-```
+
 <a class="card c-pink" href="https://twivideo.net/?ranking" target="_blank" rel="noopener">
   <div class="card-icon">🏆</div>
   <div class="card-name">Ranking</div>
@@ -320,26 +320,26 @@ vertical-align: middle;
 <a class="card c-pink" href="https://www.po-kaki-to.com" target="_blank" rel="noopener">
   <div class="card-icon">🌸</div>
   <div class="card-name">Pokkakitto</div>
-  <div class="card-desc">ぽっかきっと</div>
+  <div class="card-desc">まとめ</div>
 </a>
 
 <a class="card c-gold" href="https://missav.ai/dm221/ja" target="_blank" rel="noopener">
   <div class="card-icon">🎬</div>
   <div class="card-name">MissAV</div>
-  <div class="card-desc">AV動画</div>
+  <div class="card-desc">動画</div>
   <span class="badge">AV</span>
 </a>
 
 <a class="card c-orange" href="https://www.tokyomotion.net/" target="_blank" rel="noopener">
   <div class="card-icon">🗼</div>
   <div class="card-name">TokyoMotion</div>
-  <div class="card-desc">東京</div>
+  <div class="card-desc">動画</div>
 </a>
 
 <a class="card c-purple" href="https://www.85po.com/tags/ri-ben/" target="_blank" rel="noopener">
   <div class="card-icon">🍑</div>
   <div class="card-name">85po</div>
-  <div class="card-desc">日本</div>
+  <div class="card-desc">動画</div>
 </a>
 
 <a class="card c-pink" href="https://ja.stripchat.com" target="_blank" rel="noopener">
@@ -348,7 +348,7 @@ vertical-align: middle;
   <div class="card-desc">ライブ配信</div>
   <span class="badge">LIVE</span>
 </a>
-```
+
 
   </div>
 
